@@ -1,0 +1,32 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>Login</title>
+		<meta name="viewport" content="width=device-width,height=device-height">
+	  <link rel="stylesheet" href="/static/materialize/css/materialize.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/iconfont/material-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/index.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/static/login.css" type="text/css" media="all" />
+	</head>
+	<body>
+	  <header>
+	    <div class="sticky-subheader">
+	      <a href="/"><i class="material-icons white-text">home</i></a>
+	      <h5 class="white-text left-align niconne">
+	        Login
+	      </h5>
+	    </div>
+	    <div></div>
+	  </header>
+	  <main>
+	    <form method="POST" action="/login">
+	      <input class="username" placeholder="Username" required>
+	      <input class="password" type="password" required>
+	      <button type="submit" class="btn btn-flat">Submit</button>
+	    </form>
+	    <br>
+	    <p class="cyan-text">Don't have an account yet? <a href="/signup-page" class="blue-text">Sign up</a></p>
+	  </main>
+	  <script src="/static/js/login.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>Sign Up</title>
+		<meta name="viewport" content="width=device-width,height=device-height">
+	  <link rel="stylesheet" href="/static/materialize/css/materialize.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/iconfont/material-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/index.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/static/login.css" type="text/css" media="all" />
+	</head>
+	<body>
+	  <header>
+	    <div class="sticky-subheader">
+	      <a href="/"><i class="material-icons white-text">home</i></a>
+	      <h5 class="white-text left-align niconne">
+	        Sign Up
+	      </h5>
+	    </div>
+	    <div></div>
+	  </header>
+	  <main>
+	    <form action="/signup" method="POST">
+	      <input class="username" placeholder="Username" required>
+	      <input class="fullname" placeholder="Full Name">
+	      <input type="email" class="email" placeholder="Email" required>
+	      <input class="password" type="password" placeholder="Enter Password" required>
+	      <button type="submit" class="btn btn-flat">Submit</button>
+	    </form>
+	    <br>
+	    <p class="cyan-text">Already have an account? <a href="/login-page" class="blue-text">Login.</a></p>
+	  </main>
+	  <script src="/static/js/signup.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

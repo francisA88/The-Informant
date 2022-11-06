@@ -1,0 +1,14 @@
+main{
+  margin-top: 70px;
+}
+.article-hint{
+  border-left: solid 2px #CCCC;
+  padding-left: 5px;
+}
+.article-hint .title{ 
+  line-height: 2;
+  
+}
+header .btn{
+  text-transform: none;
+}

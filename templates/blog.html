@@ -1,0 +1,39 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>{{title}}</title>
+		<meta name="viewport" content="width=device-width,height=device-height">
+		<link rel="stylesheet" href="/static/iconfont/material-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/materialize/css/materialize.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/index.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/blog.css" type="text/css" media="all" />
+	</head>
+	<body>
+	  <header>
+	    <div class="sticky-subheader">
+	      <a href="/"><i class="material-icons white-text">home</i></a>
+	      <h5 class="niconne white-text">The Informant.</h5>
+	      <a href="/logout" class="btn btn-flat white-text">Logout</a>
+	      <a href="/blogs/{{blog_id}}/edit"><i class="material-icons white-text">edit</i></a>
+	    </div>
+	  </header>
+	  <main>
+	    <div class="container">
+  	    <p class="grey-text lighten-1"><b>By {{author}}</b></p>
+  	    <h4><b>{{title}}</b></h4>
+  	    <h6 class="grey-text text-lighten-1"><b>Date created: {{date}}</b></h6>
+  	    <br/>
+  	    <p class="blue-grey-text text-darken-2" style="font-family: 'Times New Roman';letter-spacing:1.1px">{{content[0].title()}}{{content[1:]}}</p>
+  	    <br/>
+    	  <ul id="recents">
+    	    <li><h5 class="blue-grey-text text-darken-2">Latest Articles</h5></li>
+    	    <li class="article-hint">
+    	      <span class="author">Author: Francis</span>
+    	      <p class="title flow-text">title sjendjjskqkdiw8dv...</p>
+    	      <span class="date">Date Created: date</span>
+    	    </li>
+    	  </ul>
+	    </div>
+	  </main>
+	</body>
+</html>

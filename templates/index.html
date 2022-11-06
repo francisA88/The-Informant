@@ -1,0 +1,45 @@
+<!Doctype HTML>
+<html>
+	<head>
+	  <meta name="viewport" content="width=device-width,height=device-height">
+		<title>The Informant</title>
+		<link rel="stylesheet" href="/static/iconfont/material-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/materialize/css/materialize.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/index.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/article_preview.css" type="text/css" media="all" />
+	</head>
+	<body>
+	  <header>
+	    <div class="sticky-subheader">
+	      <a href="#" class="search"><i class="material-icons">search</i></a>
+	      <div class="title niconne left-align">The Informant.</div>
+	      <a href="/login-page" id="h-gs-btn" class="btn-ol-white z-depth-0 login-btn white-text">Log In</a>
+	    </div>
+	    <div class="rem-header">
+	      <h3 class="niconne">Stay</h3>
+	      <h3 class="niconne">Informed.</h3>
+	      <h6>Be up to date with latest stories, news, and many more. Create your personal blogs and deliver your stories and ideas to the public.</h6>
+	      <a class="z-depth-0 white red-text gs btn-ol-red" href="/login-page">Get Started</a>
+	    </div>
+	  </header>
+	  <main>
+  	  <h4 style="padding-left: 10px">Latest Articles <i class="material-icons"></i></h4>
+  	  <ul id="recents">
+  	  	{%for blog in recents %}
+	  	    <li class="article-hint">
+	  	      <span class="author">By {{blog['author']}}</span>
+	  	      <p class="title flow-text">{{blog['title'][:20]}}...</p>
+	  	      <span class="date">{{blog['date']}}</span>
+	  	    </li>
+	  	  {%endfor%}
+  	  </ul>
+  	</main>
+  	<footer>
+  	  <ul>
+  	    <li><h4 class="niconne white-text">The Informant.</h4></li>
+  	    <li><h6><a href="/contact-us" class="white-text" style="text-decoration: solid underline 1px;">Contact us</a></h6></li>
+  	    <li class="white-text" style=""><h6>By F.</h6></li>
+  	  </ul>
+  	</footer>
+	</body>
+</html>

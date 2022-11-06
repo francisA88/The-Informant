@@ -1,0 +1,153 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+  color: #263238;
+}
+.btn-ol-red{
+  padding: 8px;
+  border: solid 1.3px #DF0000;
+  font-family: "Times New Roman";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .9rem;
+  min-width: 60px;
+  min-height: 30px;
+  height: 30px;
+  outline-offset: 1px;
+  outline-color: #DF000077;
+  outline-width: 1px;
+  color: #DF0000;
+}
+header .gs{
+  max-width: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 17px;
+}
+.btn-ol-white{
+  padding: 8px;
+  border: solid 1.3px white;
+  font-family: "Times New Roman";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .9rem;
+  min-width: 60px;
+  min-height: 30px;
+  height: 30px;
+  outline-offset: 1px;
+  outline-color: white;
+  outline-width: 1px;
+  color: white;
+}
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  letter-spacing: 1.2px;
+}
+header .sticky-subheader{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #DF0000;
+  justify-content: space-between;
+  position: fixed;
+  padding-right: 3px;
+  border-bottom: solid 1px white;
+}
+.sticky-subheader a:nth-child(1){
+  min-height: 45px;
+  min-width: 45px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sticky-subheader .login-btn{
+  border: solid 2px white;
+}
+
+.sticky-subheader .title{
+  font-weight: bolder;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+  color: white;
+  padding-left: 5px;
+  min-width: calc(100vw - 115px);
+}
+@media screen and (max-width: 590px){
+  .sticky-subheader .title{
+    font-size: 1.6rem;
+    text-align: left;
+  }
+}
+header .rem-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+  background: linear-gradient(to bottom, #DF0000, #BB000099);
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  margin-top: 60px;
+}
+.rem-header h3{
+  padding: none;
+}
+.rem-header h6{
+  font-family: "Times New Roman";
+}
+main{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+@font-face{
+  src: url("/static/niconne/Niconne-Regular.ttf");
+  font-family: Niconne;
+}
+.niconne{
+  font-family: Niconne;
+}
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100px;
+  background: linear-gradient(to bottom, #BB000099, #DF0000);
+}
+footer ul{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100vw;
+  max-width: 100vw;
+}
+footer li{
+  width: 100%;
+  padding-left: 10px;
+  text-align: left;
+}
+footer ul > li:nth-child(3){
+  margin-top: 10px;
+  text-align: center;
+  border-top: solid 1.2px white;
+  padding: 0;
+}

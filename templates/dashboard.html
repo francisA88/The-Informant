@@ -1,0 +1,45 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>Your Dashboard</title>
+		<meta name="viewport" content="width=device-width, height=device-height"/>
+    <link rel="stylesheet" href="/static/iconfont/material-icons.css" type="text/css" media="all"/>
+		<link rel="stylesheet" href="/static/materialize/css/materialize.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/index.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/dashboard.css" type="text/css" media="all" />
+	</head>
+	<body>
+	  <header>
+	    <div class="sticky-subheader">
+	      <a href="/"><i class="material-icons white-text">home</i></a>
+	      <h5 class="niconne white-text">Dashboard</h5>
+	      <a href="/creation-page" class="white-text hide-on-small-only"><i class="material-icons">add</i></a>
+	      <a href="/logout" class="white-text">Logout</a>
+	    </div>
+	  </header>
+	  <main>
+	    <div class="container">
+  	    <h5 class="niconne blue-grey-text text-darken-2" style="width: 100%; text-decoration: underline 2px #DF0000"><b>Your Blogs</b></h5>
+  	    <ul class="blogs">
+  	      {% if blogs %}
+  	      {%for blog in blogs%}
+  	      <li class="blog-item">
+  	        <p><b><span class="niconne title">Title:</span>{{blog['title']}}</b></p>
+  	        <p><b><span class="niconne date">Date:</span>{{blog['date']}}</b></p>
+  	        <div class="options">
+  	          <button class="btn btn-flat blue-grey lighten-1"><a href="/blogs/{{id}}/edit">Edit</a></button>
+  	          <button class="btn btn-flat red"><a class="white-text delete" data-id="{{blog_id}}">Delete</a></button>
+  	          <button class="btn btn-flat"><a href="/blogs/{{id}}/view/{{slug}}" class="material-icons blue-grey-text text-darken-1">visibility</a></button>
+  	        </div>
+  	      </li>
+  	      {%endfor%}
+  	      {%else%}
+  	      <h3 class="niconne blue-grey-text text-darken-2"><b>No Blogs Created yet</b></h3>
+  	      {%endif%}
+  	    </ul>
+  	  </div>
+  	  <a href="/creation-page" class="create-btn red lighten-3 hide-on-med-and-up"><i class="material-icons white-text">add</i></a>
+	  </main>
+	  <script src="/static/js/dashboard.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

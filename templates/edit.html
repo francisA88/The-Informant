@@ -1,0 +1,30 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>Edit</title>
+		<meta name="viewport" content="width=device-width,height=device-height">
+		<link rel="stylesheet" href="/static/iconfont/material-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/materialize/css/materialize.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/index.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/login.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/edit.css" type="text/css" media="all" />
+	</head>
+	<body>
+	  <header>
+	    <div class="sticky-subheader">
+	      <a href="/"><i class="material-icons white-text">home</i></a>
+	      <h5 class="niconne white-text">Edit</h5>
+	      <a href="/blogs/{{blog_id}}/view/{{slug}}"><i class="material-icons white-text">visibility</i></a>
+	    </div>
+	  </header>
+	  <main>
+	    <form method="POST" action="/blogs/{{blog_id}}/save">
+	       <input class="title" placeholder="Title" required>
+	       <textarea name="content" id="content" rows="50" cols="40" placeholder="Content" required></textarea>
+	       <br/>
+	       <button class="btn red white-text" type="submit">Save</button>
+	    </form>
+	  </main>
+	  <script src="/static/js/edit.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

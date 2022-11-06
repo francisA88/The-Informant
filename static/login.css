@@ -1,0 +1,28 @@
+form{
+  width: 95%;
+  max-width: 95%;
+  min-height: 150px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 2px #CCCD;
+  padding: 10px 0 10px 0;
+}
+form input{
+  max-width: 90%;
+  height: 40px;
+}
+.sticky-subheader{
+  display: flex;
+  justify-content: flex-start;
+}
+.sticky-subheader h5{
+  width: calc(100% - 50px)
+}
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
