@@ -86,7 +86,7 @@ class Views:
 		return render_template('blog.html', **context)
 		
 	@staticmethod
-	def login():
+	def signin():
 		'''Do login stuff with flask-login'''
 		#Use csrftoken here too
 		data = request.json
@@ -96,26 +96,32 @@ class Views:
 		if user:
 			if get_hash_string_SHA256(password) == user.password:
 				login_user(user, remember=True)
-				print(current_user)
-				return redirect("/dashboard")
+				return {'status': 200}
 		return {"status": 401}
 		
 	@staticmethod
+	@login_required
 	def create_blog():
+		print()
+		print("Test: ",request.json)
+		print()
 		data = request.json
 		#csrf_token = request.headers.get("X-CSRF-Token")
 #		if not (csrf_token and is_csrf_validated(csrf_token)):
 #			abort(401) #Not sure if this is right.
 		blog_content = data['content']
 		blog_title = data['title']
-		try:
-			with app.app_context():
-				blog = Blog(content=blog_content, title=blog_title, user=current_user, date_created=datetime.now())
-				db.session.add(blog)
-				db.session.commit()
-			return {'status': 201}
-		except Exception as e:
-			return {'status': '500'}
+		if blog_content.replace(" ",'') and blog_title.replace(" ",''):
+			try:
+				with app.app_context():
+					blog = Blog(content=blog_content, title=blog_title, user=current_user, date_created=datetime.now())
+					db.session.add(blog)
+					db.session.commit()
+					
+				return {'status': 201}
+			except Exception as e:
+				return {'status': 500}
+		return {'status': 400}
 		
 	@staticmethod
 	@login_required
@@ -185,7 +191,7 @@ class Views:
 	def dashboard():
 		with app.app_context():
 			print(current_user)
-			blogs_for_user = Blog.query.filter_by(user=current_user).first()
+			blogs_for_user = Blog.query.filter_by(user=current_user)
 			context = {"blogs":[], 'user': current_user}
 			if blogs_for_user:
 				for blog in blogs_for_user:
@@ -202,6 +208,17 @@ class Views:
 	def logout():
 		logout_user()
 		return redirect('/')
+		
+	@staticmethod
+	@login_required
+	def delete(blog_id):
+		with app.app_context():
+			blog = Blog.query.get(blog_id)
+			if current_user == blog.user and current_user.is_authenticated:
+				db.session.delete(blog)
+				db.session.commit()
+				return {"status": 200}
+		return {'status': 500}
 
 from datetime import datetime
 def _create_blog(user, title, content):
@@ -218,12 +235,13 @@ urls = [
 	('/contact-us', Views.contact_page),
 	('/login-page', Views.login_page),
 	('/signup-page', Views.signup_page),
-	('/login', Views.login, ["POST"]),
+	('/signin', Views.signin, ["POST"]),
 	('/signup', Views.signup, ['POST']),
 	('/dashboard', Views.dashboard),
 	('/blogs/<int:blog_id>/edit', Views.edit_blog),
 	('/blogs/<int:blog_id>/save', Views.save_changes, ["POST"]),
-	('/logout', Views.logout)
+	('/logout', Views.logout),
+	('/blogs/<int:blog_id>/delete', Views.delete, ['DELETE']),
 ]
 #few configurations for the app's running
 settings = {

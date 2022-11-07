@@ -5,7 +5,7 @@ document.forms[0].addEventListener('submit', function(e){
     password: document.querySelector('input.password').value
   }
   e.preventDefault();
-  fetch('/login',{
+  fetch(this.action,{
     method: 'POST',
     //body: JSON.stringify(data),
     headers: {'Content-Type': 'application/json'},
@@ -14,9 +14,9 @@ document.forms[0].addEventListener('submit', function(e){
     res=>res.json()).then(
       d=>{
         if (d.status === 401){
-          alert("Something went wrong");
+          alert("Invalid username or password");
         }
-        else if(d.status === 201){
+        else if(d.status === 200){
           location.href = "/dashboard"
         }
      })
