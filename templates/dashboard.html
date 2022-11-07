@@ -27,9 +27,9 @@
   	        <p><b><span class="niconne title">Title:</span>{{blog['title']}}</b></p>
   	        <p><b><span class="niconne date">Date:</span>{{blog['date']}}</b></p>
   	        <div class="options">
-  	          <button class="btn btn-flat blue-grey lighten-1"><a href="/blogs/{{id}}/edit">Edit</a></button>
-  	          <button class="btn btn-flat red"><a class="white-text delete" data-id="{{blog_id}}">Delete</a></button>
-  	          <button class="btn btn-flat"><a href="/blogs/{{id}}/view/{{slug}}" class="material-icons blue-grey-text text-darken-1">visibility</a></button>
+  	          <button class="btn btn-flat blue-grey lighten-1"><a href="/blogs/{{blog['id']}}/edit">Edit</a></button>
+  	          <button class="btn btn-flat red"><a class="white-text delete" data-id="{{blog['id']}}">Delete</a></button>
+  	          <button class="btn btn-flat"><a href="/blogs/{{blog['id']}}/view/{{blog['slug']}}" class="material-icons blue-grey-text text-darken-1">visibility</a></button>
   	        </div>
   	      </li>
   	      {%endfor%}

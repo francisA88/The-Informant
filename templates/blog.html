@@ -27,11 +27,15 @@
   	    <br/>
     	  <ul id="recents">
     	    <li><h5 class="blue-grey-text text-darken-2">Latest Articles</h5></li>
+    	    {%if recents%}
+    	    {%for blog in recents%}
     	    <li class="article-hint">
-    	      <span class="author">Author: Francis</span>
-    	      <p class="title flow-text">title sjendjjskqkdiw8dv...</p>
-    	      <span class="date">Date Created: date</span>
+    	      <span class="author">Author: {{blog['author']}}</span>
+    	      <p class="title flow-text">{{blog['title'][:15]}}...</p>
+    	      <span class="date">Date Created: {{blog['date']}}</span>
     	    </li>
+    	    {%endfor%}
+    	    {%endif%}
     	  </ul>
 	    </div>
 	  </main>

@@ -79,7 +79,7 @@ class Views:
 			  "content": b.content,
 			  "author": b.user.username,
 			  'date': f'{b.date_created.day} - {b.date_created.month} - {b.date_created.year}',
-			  'blog_id': b.id} for b in recents.all()[::-1][:10]
+			  'id': b.id} for b in recents.all()[::-1][:10]
 			  ]
 		}
 	#	db.session.close()
@@ -166,9 +166,15 @@ class Views:
 			data = request.json
 			modified_content = data['content']
 			modified_title = data['title']
-			blog.title = modified_title
-			blog.content = modified_content
-			db.session.commit()
+			if modified_title.replace(" ",''):
+				#If there is any change in title, save it
+				blog.title = modified_title
+				db.session.commit()
+			if modified_content.replace(" ",""):
+				#if there is any change in content, save it
+				blog.content = modified_content
+				db.session.commit()
+			return {'status': 200}
 		return {'status': 201}
 		
 	@staticmethod

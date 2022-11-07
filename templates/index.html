@@ -24,6 +24,7 @@
 	  </header>
 	  <main>
   	  <h4 style="padding-left: 10px">Latest Articles <i class="material-icons"></i></h4>
+  	  {%if recents%}
   	  <ul id="recents">
   	  	{%for blog in recents %}
 	  	    <li class="article-hint">
@@ -33,6 +34,9 @@
 	  	    </li>
 	  	  {%endfor%}
   	  </ul>
+  	  {%else%}
+	  	<div class="center-align blue-grey-text text-darken-2 niconne"><h5>No Blogs yet</h5></div>
+	  	{%endif%}
   	</main>
   	<footer>
   	  <ul>

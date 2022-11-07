@@ -4,10 +4,10 @@ main{
 .article-hint{
   border-left: solid 2px #CCCC;
   padding-left: 5px;
+  margin-top: 20px;
 }
 .article-hint .title{ 
   line-height: 2;
-  
 }
 header .btn{
   text-transform: none;
